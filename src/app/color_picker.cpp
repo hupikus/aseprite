@@ -144,6 +144,31 @@ void ColorPicker::pickColor(const Site& site,
       }
       break;
     }
+    
+    // Get the color from the highest avaliable layer
+    case FromFirstVisibleLayer: {
+      doc::CelList cels;
+      doc::RenderPlan plan;
+      
+
+      LayerList all_visible_layers = sprite->allVisibleLayers();
+      for (Layer *layer : all_visible_layers) {
+        plan.addLayer(layer, site.frame());
+      }
+
+      sprite->pickCels(pos, kOpacityThreshold, plan, cels);
+      if (cels.empty()) return;
+      
+      for (const Cel *cel : cels) {
+        doc::color_t imageColor;
+        if (get_cel_pixel(cel, pos.x, pos.y, site.frame(), imageColor)) {
+          m_color = app::Color::fromImage(cel->image()->pixelFormat(), imageColor);
+          m_layer = cel->layer();
+          break;
+        }
+      }
+      break;
+    }
 
     // Pick from the current layer
     case FromActiveLayer: {

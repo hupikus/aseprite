@@ -44,9 +44,8 @@ void EyedropperCommand::pickSample(const Site& site,
   switch (pref.eyedropper.sample()) {
     case app::gen::EyedropperSample::ALL_LAYERS:    mode = ColorPicker::FromComposition; break;
     case app::gen::EyedropperSample::CURRENT_LAYER: mode = ColorPicker::FromActiveLayer; break;
-    case app::gen::EyedropperSample::FIRST_REFERENCE_LAYER:
-      mode = ColorPicker::FromFirstReferenceLayer;
-      break;
+    case app::gen::EyedropperSample::FIRST_REFERENCE_LAYER: mode = ColorPicker::FromFirstReferenceLayer; break;
+    case app::gen::EyedropperSample::FIRST_VISIBLE_LAYER: mode = ColorPicker::FromFirstVisibleLayer; break;
   }
 
   ColorPicker picker;
