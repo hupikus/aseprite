@@ -125,6 +125,7 @@ private:
   // Snap to grid window
   class SnapToGridWindow;
   SnapToGridWindow* m_snapToGridWindow;
+
 };
 
 } // namespace app

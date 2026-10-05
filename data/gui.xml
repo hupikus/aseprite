@@ -592,6 +592,7 @@
       <key tool="rectangular_marquee" shortcut="M" />
       <key tool="elliptical_marquee" shortcut="Shift+M" />
       <key tool="lasso" shortcut="Q" />
+      <key tool="open_lasso" shortcut="Shift+Ctrl+Q" />
       <key tool="polygonal_lasso" shortcut="Shift+Q" />
       <key tool="magic_wand" shortcut="W" />
 
@@ -1328,6 +1329,15 @@
             tracepolicy="last" />
       <tool id="lasso"
             text="@.lasso_tool"
+            tooltip="@.selection_tooltip"
+            fill="always"
+            ink="selection"
+            controller="freehand"
+            pointshape="pixel"
+            intertwine="as_lines"
+            tracepolicy="accumulate" />
+      <tool id="open_lasso"
+            text="@.open_lasso_tool"
             tooltip="@.selection_tooltip"
             fill="always"
             ink="selection"
