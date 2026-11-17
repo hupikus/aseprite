@@ -595,10 +595,12 @@ bool StandbyState::onUpdateStatusBar(Editor* editor)
       }
     }
 
-    // Display current layer only if the timeline is hidden
-    if (!App::instance()->mainWindow()->getTimelineVisibility()) {
-      if (Layer *layer = site.layer()) {
-        buf += fmt::format(" Layer: {}", layer->name());
+    if (Preferences::instance().experimental.displayActiveLayer()) {
+      // Display current layer only if the timeline is hidden
+      if (!App::instance()->mainWindow()->getTimelineVisibility()) {
+        if (Layer *layer = site.layer()) {
+          buf += fmt::format(" Layer: {}", layer->name());
+        }
       }
     }
     StatusBar::instance()->setStatusText(0, buf);
