@@ -5,6 +5,7 @@
 // This program is distributed under the terms of
 // the End-User License Agreement for Aseprite.
 
+#include <string>
 #ifdef HAVE_CONFIG_H
   #include "config.h"
 #endif
@@ -693,6 +694,7 @@ StatusBar::StatusBar(TooltipManager* tooltipManager)
     m_zoomEntry = new ZoomEntry;
     m_zoomEntry->ZoomChange.connect(&StatusBar::onChangeZoom, this);
 
+
     setup_mini_look(m_currentFrame);
 
     box4->addChild(m_currentFrame);
@@ -702,8 +704,10 @@ StatusBar::StatusBar(TooltipManager* tooltipManager)
     box1->addChild(box4);
     box1->addChild(m_zoomEntry);
 
+
     m_docControls->addChild(box1);
     m_commandsBox = box1;
+
   }
 
   // Tooltips
@@ -922,6 +926,7 @@ void StatusBar::onResize(ResizeEvent& ev)
     updateSnapToGridWindowPosition();
 }
 
+
 void StatusBar::onActiveSiteChange(const Site& site)
 {
   DocObserverWidget<ui::HBox>::onActiveSiteChange(site);
@@ -997,6 +1002,7 @@ void StatusBar::updateSnapToGridWindowPosition()
   snapRc.y = rc.y - snapRc.h;
   m_snapToGridWindow->setBounds(snapRc);
 }
+
 
 void StatusBar::showAbout()
 {
