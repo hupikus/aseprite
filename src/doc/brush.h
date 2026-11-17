@@ -40,7 +40,12 @@ using BrushRef = std::shared_ptr<Brush>;
 class Brush {
 public:
   static const int kMinBrushSize = 1;
+
+  #ifdef MAX_BRUSH_SIZE
+  static const int kMaxBrushSize = MAX_BRUSH_SIZE;
+  #else
   static const int kMaxBrushSize = 64;
+  #endif
 
   enum class ImageColor { MainColor, BackgroundColor, BothColors };
 
