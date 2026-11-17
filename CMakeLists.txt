@@ -96,6 +96,7 @@ option(ENABLE_PSD          "Enable experimental support for .psd files" off)
 option(ENABLE_DESKTOP_INTEGRATION  "Enable desktop integration modules" off)
 option(ENABLE_QT_THUMBNAILER       "Enable kde5/qt5 thumnailer" off)
 set(CUSTOM_WEBSITE_URL "" CACHE STRING "Enable custom local webserver to check updates")
+set(MAX_BRUSH_SIZE  "64" CACHE STRING "Set a different maximum brush size")
 
 if(ENABLE_SENTRY)
   set(SENTRY_DIR "" CACHE STRING "Sentry native location")
@@ -137,6 +138,8 @@ endif()
 if(ENABLE_DRM AND NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/drm/CMakeLists.txt)
   message(FATAL_ERROR "Your Aseprite repository is incomplete, clone the drm repository")
 endif()
+
+add_compile_definitions(MAX_BRUSH_SIZE=${MAX_BRUSH_SIZE})
 
 ######################################################################
 # Profile build type
