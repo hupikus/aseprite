@@ -394,6 +394,7 @@
         <part id="tool_rectangular_marquee" x="144" y="0" w="16" h="16"/>
         <part id="tool_elliptical_marquee" x="160" y="0" w="16" h="16"/>
         <part id="tool_lasso" x="176" y="0" w="16" h="16"/>
+        <part id="tool_lasso_open" x="192" y="16" w="16" h="16"/>
         <part id="tool_polygonal_lasso" x="192" y="0" w="16" h="16"/>
         <part id="tool_magic_wand" x="208" y="0" w="16" h="16"/>
         <part id="tool_pencil" x="144" y="16" w="16" h="16"/>
@@ -1053,10 +1054,10 @@
             <text color="slider_empty_text" align="center middle" state="focus" y="1"/>
         </style>
         <style id="textedit" border="2">
-            <background color="textbox_face" />
-            <background color="selected" align="left" state="selected" />
-            <text color="textbox_text" align="left" />
-            <text color="selected_text" align="left" state="selected" />
+            <background color="textbox_face"/>
+            <background color="selected" align="left" state="selected"/>
+            <text color="textbox_text" align="left"/>
+            <text color="selected_text" align="left" state="selected"/>
         </style>
         <style id="mini_slider" extends="slider" font="mini">
             <background part="mini_slider_empty"/>
