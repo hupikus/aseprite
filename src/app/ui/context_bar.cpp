@@ -1582,6 +1582,7 @@ public:
     m_sample.addItem(Strings::context_bar_all_layers());
     m_sample.addItem(Strings::context_bar_current_layer());
     m_sample.addItem(Strings::context_bar_first_ref_layer());
+    m_sample.addItem(Strings::context_bar_first_visible_layer());
 
     addChild(new Label(Strings::context_bar_pick()));
     addChild(&m_channel);

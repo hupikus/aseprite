@@ -1,0 +1,12 @@
+{
+    "Auto_generated": "This file is auto-generated. Any extra tags or formatting will be lost",
+    "target_sets": [
+        {
+            "cmake_config": "Debug",
+            "directory": "/home/sipuchiy/.local/share/aseprite/build",
+            "loaded_via_cmake": true,
+            "name": "aseprite@/home/sipuchiy/.local/share/aseprite/build - [Debug]",
+            "targets": null
+        }
+    ]
+}

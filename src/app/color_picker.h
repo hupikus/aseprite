@@ -23,7 +23,12 @@ class Site;
 
 class ColorPicker {
 public:
-  enum Mode { FromComposition, FromActiveLayer, FromFirstReferenceLayer };
+  enum Mode {
+    FromComposition,
+    FromActiveLayer,
+    FromFirstReferenceLayer,
+    FromFirstVisibleLayer
+  };
 
   ColorPicker();
 
